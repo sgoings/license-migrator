@@ -1,11 +1,11 @@
 #!/bin/bash
 
-projects="seed-repo"
+projects=""
 
 for i in $projects; do
     git clone "https://github.com/$USER/$i"
     pushd "$i"
-    git remote add upstream "https://github.com:deis/$i"
+    git remote add upstream "https://github.com/deis/$i.git"
     git fetch --tags upstream master
     git merge upstream/master
     git checkout -b mit
